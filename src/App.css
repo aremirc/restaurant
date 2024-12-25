@@ -1,0 +1,23 @@
+@keyframes fireGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.8), 0 0 30px rgba(255, 140, 0, 0.6);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 69, 0, 1), 0 0 50px rgba(255, 140, 0, 0.8);
+    transform: scale(1.1);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.8), 0 0 30px rgba(255, 140, 0, 0.6);
+    transform: scale(1);
+  }
+}
+
+.fire-animation {
+  animation: fireGlow 1.5s infinite ease-in-out;
+}
+
+/* Añadir una sombra suave al texto */
+.text-shadow {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
