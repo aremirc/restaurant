@@ -28,7 +28,7 @@ const localIP = getLocalIP();
 
 // Configuración CORS
 const corsOptions = {
-  origin: import.meta.env.VITE_URL || `http://${localIP}:5173`,  // Usamos la IP local detectada
+  origin: process.env.VITE_URL || `http://${localIP}:5173`,  // Usamos la IP local detectada
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"],
 };
