@@ -32,7 +32,7 @@ export const Products = ({ show, filteredProducts }: MenuItemProps) => {
   // }
 
   return (
-    <div className={`flex ${show ? 'sm:w-9/12 justify-normal' : 'w-full justify-center'} flex-wrap gap-4 py-5 overflow-y-auto`}>
+    <div className={`flex sm:w-9/12 ${show ? 'justify-normal' : 'justify-center'} flex-wrap gap-4 py-5 overflow-y-auto`}>
       {filteredProducts.map((item) => (
         <Item key={item.id} item={item} show={show} />
       ))}

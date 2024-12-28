@@ -41,7 +41,7 @@ export const OrderContent = ({ onHideOrder }: OrderContentProps) => {
   return (
     <>
       <div
-        className={`sm:w-3/12 ${isExpanded ? 'absolute inset-0' : 'hidden'} sm:static sm:block bg-gray-100 flex flex-col items-center border border-dashed border-slate-300 p-5 rounded-lg space-y-10 overflow-y-auto z-10`} // Expansión condicional
+        className={`w-full sm:static ${isExpanded ? 'absolute inset-0' : 'hidden'} sm:block bg-gray-100 flex flex-col items-center border border-dashed border-slate-300 p-5 rounded-lg space-y-10 overflow-y-auto z-10`} // Expansión condicional
       >
         {orders.length ? (
           <>
@@ -92,12 +92,12 @@ export const OrderContent = ({ onHideOrder }: OrderContentProps) => {
             <OrderTotal hideOrderWindow={handleTimerShow} />
           </>
         ) : (
-          <p className="font-medium uppercase">Aún no has ordenado</p>
+          <p className="font-medium text-center uppercase">Aún no has ordenado</p>
         )}
       </div>
 
-      <div className="absolute bottom-3 left-3 sm:hidden z-20">
-        <button type="button" className="bg-gray-400 hover:bg-gray-500 p-2 rounded-full" onClick={toggleExpansion}> {/* Botón para alternar expansión */}
+      <div className="absolute top-2 right-2 sm:hidden z-20">
+        <button type="button" className="bg-teal-300 hover:bg-teal-400 p-2 rounded-full" onClick={toggleExpansion}> {/* Botón para alternar expansión */}
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor"></rect>
             <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor"></line>

@@ -63,7 +63,7 @@ function App() {
         <header className="relative bg-teal-400">
           <span className="absolute top-1 left-1 bg-teal-300 text-xs p-1 rounded-md">RESTAURANTE</span>
 
-          <h1 className="text-center text-4xl font-semibold uppercase py-5">"El Fogón"</h1>
+          <h1 className="text-center text-4xl font-semibold uppercase py-5">"Fogón"</h1>
 
           {client.id && <CopyCode textToCopy={client.id} className="absolute top-3 right-3 hidden sm:flex flex-col-reverse" />}
 
@@ -76,7 +76,7 @@ function App() {
             >
               {showOptions ? (
                 <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="currentColor" d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path fill="currentColor" d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               ) : (
                 <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -88,7 +88,7 @@ function App() {
         </header>
         <nav className={`fixed sm:static inset-0 ${!showOptions && 'hidden'} sm:block flex justify-center items-center bg-gray-900 bg-opacity-50 z-30 transition-all  backdrop-blur-sm`}>
           <div className={`h-screen sm:h-auto w-80 sm:w-full bg-gray-200 absolute sm:static top-0 ${showOptions ? 'right-0' : '-right-80'} flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-5 px-4 py-8 sm:py-4 z-10`}>
-            <div className="w-full flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-5">
+            <div className="w-full sm:w-fit flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-5">
               {!showOrders && (
                 <button
                   title="RESERVAS"
@@ -117,16 +117,16 @@ function App() {
                   className="w-60 hover:bg-teal-300 shadow-lg hover:shadow-teal-500 py-4 sm:py-2" />
               </div>
             )}
-
-            <span className="opacity-0"></span>
           </div>
         </nav>
         <main className="relative bg-gray-100 border border-dashed h-full w-full mx-auto flex flex-col sm:flex-row gap-5 p-5 lg:px-10 overflow-y-auto">
-          <Products show={showOrders} filteredProducts={filteredProducts} />
-
           {isModalOpen && <RestaurantModal onClose={handleModalClose} onSubmit={handleFormSubmit} />}
 
-          {showOrders ? <OrderContent onHideOrder={handleHideOrder} /> : <ReservaValidation />}
+          <Products show={showOrders} filteredProducts={filteredProducts} />
+
+          <div className="sm:w-3/12 flex">
+            {showOrders ? <OrderContent onHideOrder={handleHideOrder} /> : <ReservaValidation />}
+          </div>
         </main>
         <footer>
           {/* <Pedidos /> */}

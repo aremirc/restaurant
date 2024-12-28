@@ -36,7 +36,7 @@ export const Item = ({ item, show }: MenuItemProps) => {
           onClick={() => addItem(itemProduct)}
           disabled={!itemProduct.state} // Desactiva el botón si no está activo
           className={`h-10 sm:h-auto text-xs sm:text-base sm:mt-2 p-2 sm:px-5 rounded-lg ${itemProduct.quantity > 0
-            ? "bg-teal-500 text-black"
+            ? "bg-teal-400 text-black"
             : !itemProduct.state
               ? "bg-gray-400 text-white"
               : "bg-black text-white"
